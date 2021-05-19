@@ -1,7 +1,10 @@
 package com.tmobiledev.tmobiledevkotlin
 
 import android.app.Application
+import com.tmobiledev.tmobiledevkotlin.di.ApiModiles
+import com.tmobiledev.tmobiledevkotlin.di.RepositoryModel
 import com.tmobiledev.tmobiledevkotlin.di.RetrofitModules
+import com.tmobiledev.tmobiledevkotlin.di.ViewModelModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -17,7 +20,10 @@ class TmobileDevApplication : Application() {
 //            androidLogger(Level.DEBUG)
             androidContext(this@TmobileDevApplication)
             modules(listOf(
-                RetrofitModules
+                RetrofitModules,
+                ApiModiles,
+                RepositoryModel,
+                ViewModelModules
             ))
         }
     }
